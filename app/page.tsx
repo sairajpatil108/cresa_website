@@ -1,16 +1,16 @@
 "use client"
 
-import Link from "next/link"
-import Image from "next/image"
 import { motion } from "framer-motion"
-import { ChevronRight, Award, Calendar, FileText, Lightbulb } from "lucide-react"
+import { Award, Calendar, ChevronRight, FileText, Lightbulb } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 
-import { Button } from "@/components/ui/button"
-import { CounterAnimation } from "@/components/counter-animation"
 import { ContentCarousel } from "@/components/content-carousel"
-import { Navbar } from "@/components/navbar"
+import { CounterAnimation } from "@/components/counter-animation"
 import { HomeEventsSection } from "@/components/home-events-section"
+import { Navbar } from "@/components/navbar"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
@@ -38,7 +38,7 @@ export default function Home() {
               className="max-w-3xl space-y-6"
             >
               <div className="inline-block rounded-full bg-orange-500/10 px-4 py-1.5 text-sm font-medium text-orange-500 border border-orange-500/20">
-                Welcome to the Department of Computer Engineering
+                Welcome to the Department of Computer Engineering Regional Department
               </div>
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
                 Shaping the <span className="text-orange-500">Future</span> of Technology
@@ -47,17 +47,31 @@ export default function Home() {
                 Empowering students with cutting-edge knowledge and skills to innovate and lead in the digital era.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-black rounded-full">Explore Programs</Button>
                 <Button
-                  variant="outline"
-                  className="border-orange-500/50 text-orange-500 hover:bg-orange-500/10 rounded-full"
+                  className="bg-orange-500 hover:bg-orange-600 text-black rounded-full"
+                  onClick={() => window.open("https://v0-college-club-website-design.vercel.app/#", "_blank")}
                 >
-                  Meet Our Faculty
+                  Community Engagement Programs
                 </Button>
+
               </div>
             </motion.div>
+
+            {/* Logo Positioned to the Right with Padding */}
+            <div className="relative md:absolute md:right-10 right-4 top-1/2 md:top-1/2 md:transform md:-translate-y-1/2 flex justify-center md:block mt-6 md:mt-0">
+              <div className="relative w-50 h-50 md:w-64 md:h-64 overflow-hidden rounded-full">
+                <Image
+                  src="/logo.jpeg?height=96&width=96"
+                  alt="Department Logo"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
           </div>
         </section>
+
 
         {/* Vision & Mission Section */}
         <section id="about" className="py-20 bg-zinc-900/50">
@@ -282,10 +296,10 @@ export default function Home() {
             <div>
               <h3 className="font-bold text-lg mb-4">Contact Us</h3>
               <address className="text-gray-400 not-italic space-y-2">
-                <p>123 University Avenue</p>
-                <p>City, State 12345</p>
-                <p>Email: info@compeng.edu</p>
-                <p>Phone: (123) 456-7890</p>
+                <p>Pimpri Chinchwad College of Engineering</p>
+                <p>Pune, Maharashtra 411044</p>
+                <p>Email: pccoepune.org</p>
+                <p>Phone: 345-456-7890</p>
               </address>
             </div>
           </div>
@@ -316,4 +330,5 @@ function AchievementCard({ icon, title, value, description }) {
     </motion.div>
   )
 }
+
 

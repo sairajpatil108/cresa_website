@@ -1,9 +1,9 @@
-import Link from "next/link"
+import { ArrowLeft, Calendar, Clock, Download, MapPin, Share2 } from "lucide-react"
 import Image from "next/image"
-import { Calendar, Clock, MapPin, ArrowLeft, Share2, Download } from "lucide-react"
+import Link from "next/link"
 
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { VideoPlayer } from "@/components/video-player"
 
@@ -17,7 +17,7 @@ const getEventById = (id: string) => {
       time: "10:00 AM - 4:00 PM",
       location: "Computer Engineering Building, Room 305",
       category: "Workshop",
-      image: "/placeholder.svg?height=500&width=1000",
+      image: "/hackathon1.jpg?height=500&width=1000",
       description: "A hands-on workshop exploring the latest advancements in AI and machine learning technologies.",
       content: `
         <p>Join us for an immersive one-day workshop on Artificial Intelligence and Machine Learning, where participants will gain practical experience with cutting-edge technologies and frameworks.</p>
@@ -194,9 +194,7 @@ export default function EventPage({ params }: { params: { id: string } }) {
             <Link href="/#events" className="text-sm font-medium hover:text-orange-500 transition-colors">
               Events
             </Link>
-            <Link href="/#contact" className="text-sm font-medium hover:text-orange-500 transition-colors">
-              Contact
-            </Link>
+
           </nav>
           <Button variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black">
             Student Portal
@@ -430,13 +428,13 @@ export default function EventPage({ params }: { params: { id: string } }) {
               {Object.values(
                 getEventById("ai-workshop")
                   ? {
-                      "national-hackathon": getEventById("national-hackathon"),
-                      "expert-talk": getEventById("expert-talk"),
-                    }
+                    "national-hackathon": getEventById("national-hackathon"),
+                    "expert-talk": getEventById("expert-talk"),
+                  }
                   : {
-                      "ai-workshop": getEventById("ai-workshop"),
-                      "expert-talk": getEventById("expert-talk"),
-                    },
+                    "ai-workshop": getEventById("ai-workshop"),
+                    "expert-talk": getEventById("expert-talk"),
+                  },
               ).map((relatedEvent) => (
                 <div
                   key={relatedEvent.id}
@@ -560,10 +558,10 @@ export default function EventPage({ params }: { params: { id: string } }) {
             <div>
               <h3 className="font-bold text-lg mb-4">Contact Us</h3>
               <address className="text-gray-400 not-italic space-y-2">
-                <p>123 University Avenue</p>
-                <p>City, State 12345</p>
-                <p>Email: info@compeng.edu</p>
-                <p>Phone: (123) 456-7890</p>
+                <p>Pimpri Chinchwad College of Engineering</p>
+                <p>Pune, Maharashtra 411044</p>
+                <p>Email: pccoepune.org</p>
+                <p>Phone: 345-456-7890</p>
               </address>
             </div>
           </div>

@@ -1,10 +1,9 @@
+import { Github, Linkedin, Mail, Twitter } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { Mail, Linkedin, Twitter, Github } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Navbar } from "@/components/navbar"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 // Sample team data
 const leadershipTeam = [
@@ -12,7 +11,7 @@ const leadershipTeam = [
     id: "president",
     name: "Alex Johnson",
     role: "President",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/person3.jpg?height=300&width=300",
     bio: "Alex is a final year Computer Engineering student with a passion for AI and machine learning. As President, he leads the department's student initiatives and represents student interests to faculty.",
     email: "alex.johnson@example.com",
     linkedin: "https://linkedin.com/in/example",
@@ -23,7 +22,7 @@ const leadershipTeam = [
     id: "vice-president",
     name: "Sophia Chen",
     role: "Vice-President",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/person6.jpeg?height=300&width=300",
     bio: "Sophia specializes in cybersecurity and works closely with the President to coordinate department activities and manage team operations.",
     email: "sophia.chen@example.com",
     linkedin: "https://linkedin.com/in/example",
@@ -37,7 +36,7 @@ const domainHeads = [
     id: "technical-head",
     name: "Raj Patel",
     role: "Technical Head",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/person1.jpg?height=300&width=300",
     bio: "Raj oversees all technical projects and workshops in the department. He has expertise in full-stack development and cloud computing.",
     email: "raj.patel@example.com",
     linkedin: "https://linkedin.com/in/example",
@@ -47,7 +46,7 @@ const domainHeads = [
     id: "marketing-head",
     name: "Emma Wilson",
     role: "Marketing Head",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/person2.jpg?height=300&width=300",
     bio: "Emma manages the department's branding, social media presence, and promotional activities for events and initiatives.",
     email: "emma.wilson@example.com",
     linkedin: "https://linkedin.com/in/example",
@@ -57,7 +56,7 @@ const domainHeads = [
     id: "design-head",
     name: "Miguel Rodriguez",
     role: "Design Head",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/person4.jpg?height=300&width=300",
     bio: "Miguel leads the design team responsible for creating visual assets for department events, publications, and digital platforms.",
     email: "miguel.rodriguez@example.com",
     linkedin: "https://linkedin.com/in/example",
@@ -67,7 +66,7 @@ const domainHeads = [
     id: "sports-head",
     name: "Aisha Khan",
     role: "Sports Head",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/person5.jpg?height=300&width=300",
     bio: "Aisha coordinates sports activities and competitions for the department, promoting physical fitness and team building.",
     email: "aisha.khan@example.com",
     linkedin: "https://linkedin.com/in/example",
@@ -114,7 +113,7 @@ const teamMembers = [
     id: "technical-team-3",
     name: "Lucas Garcia",
     role: "Technical Team",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/hackathon1.jpg?height=300&width=300",
     specialization: "AI & Machine Learning",
   },
   {
@@ -240,7 +239,7 @@ export default function TeamPage() {
             <Tabs defaultValue="leadership" className="w-full">
               <TabsList className="grid w-full grid-cols-4 mb-8">
                 <TabsTrigger value="leadership">Leadership</TabsTrigger>
-                <TabsTrigger value="domain-heads">Domain Heads</TabsTrigger>
+                <TabsTrigger value="domain-heads">Core Team</TabsTrigger>
                 <TabsTrigger value="members">Team Members</TabsTrigger>
                 <TabsTrigger value="faculty">Faculty Advisors</TabsTrigger>
               </TabsList>
@@ -293,7 +292,14 @@ export default function TeamPage() {
                 Interested in becoming part of the Computer Engineering Department team? We're always looking for
                 passionate and talented individuals to join us.
               </p>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-black">Apply Now</Button>
+              <a
+                href="https://forms.gle/EuoaQaF18Rb12nrq8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-orange-500 hover:bg-orange-600 text-black px-4 py-2 inline-block text-center rounded-md"
+              >
+                Apply Now
+              </a>
             </div>
           </div>
         </section>
@@ -374,15 +380,15 @@ export default function TeamPage() {
             <div>
               <h3 className="font-bold text-lg mb-4">Contact Us</h3>
               <address className="text-gray-400 not-italic space-y-2">
-                <p>123 University Avenue</p>
-                <p>City, State 12345</p>
-                <p>Email: info@compeng.edu</p>
-                <p>Phone: (123) 456-7890</p>
+                <p>Pimpri Chinchwad College Of Engineering</p>
+                <p>Pune, Maharashtra 411044</p>
+                <p>Email: pccoepune.org</p>
+                <p>Phone: 767-456-7890</p>
               </address>
             </div>
           </div>
           <div className="border-t border-orange-500/20 mt-8 pt-8 text-center text-gray-500 text-sm">
-            <p>© {new Date().getFullYear()} Computer Engineering Department. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Computer Engineering Regional Department. All rights reserved.</p>
           </div>
         </div>
       </footer>

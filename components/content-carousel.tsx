@@ -1,9 +1,9 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
-import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { ChevronLeft, ChevronRight, Play } from "lucide-react"
+import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
 
 import { Button } from "@/components/ui/button"
 
@@ -16,39 +16,31 @@ const carouselItems = [
     description:
       "Highlights from our flagship event featuring keynote speeches, project exhibitions, and award ceremonies.",
     media: "/placeholder-video.mp4",
-    thumbnail: "/placeholder.svg?height=500&width=1000",
+    thumbnail: "/gathering1.jpg?height=500&width=1000",
   },
   {
     id: 2,
     type: "image",
     title: "Robotics Competition",
     description: "Students showcasing their innovative robotics projects at the inter-university competition.",
-    media: "/placeholder.svg?height=500&width=1000",
+    media: "/gathering2.jpg?height=500&width=1000",
   },
+
   {
     id: 3,
-    type: "testimonial",
-    name: "Dr. Sarah Johnson",
-    role: "Department Head",
-    quote:
-      "Our department is committed to providing cutting-edge education and research opportunities that prepare students for the rapidly evolving field of computer engineering.",
-    avatar: "/placeholder.svg?height=100&width=100",
-  },
-  {
-    id: 4,
     type: "image",
     title: "Industry Visit to Tech Giant",
     description:
       "Students visited the headquarters of a leading technology company to gain insights into industry practices.",
-    media: "/placeholder.svg?height=500&width=1000",
+    media: "/hackathon1.jpg?height=500&width=1000",
   },
   {
-    id: 5,
+    id: 4,
     type: "video",
     title: "AI Research Showcase",
     description: "Presentation of groundbreaking research projects in artificial intelligence and machine learning.",
     media: "/placeholder-video.mp4",
-    thumbnail: "/placeholder.svg?height=500&width=1000",
+    thumbnail: "/gathering3.jpeg?height=500&width=1000",
   },
 ]
 
@@ -226,9 +218,8 @@ export function ContentCarousel() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-orange-500 scale-110" : "bg-gray-600 hover:bg-gray-500"
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? "bg-orange-500 scale-110" : "bg-gray-600 hover:bg-gray-500"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

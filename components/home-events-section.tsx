@@ -1,13 +1,13 @@
 "use client"
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
 import { motion } from "framer-motion"
-import { Calendar, ArrowRight, ChevronRight, ChevronLeft } from "lucide-react"
+import { ArrowRight, Calendar, ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { useState } from "react"
 
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
 // Sample events data
 const events = [
@@ -15,7 +15,7 @@ const events = [
     id: "ai-workshop",
     title: "AI & Machine Learning Workshop",
     date: "March 15, 2023",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/hackathon1.jpg?height=200&width=400",
     description: "A hands-on workshop exploring the latest advancements in AI and machine learning technologies.",
     category: "Workshop",
     status: "upcoming",
@@ -24,7 +24,7 @@ const events = [
     id: "national-hackathon",
     title: "National Hackathon 2023",
     date: "February 8-10, 2023",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/hackathon2.jpg?height=200&width=400",
     description: "A 48-hour coding competition where students developed innovative solutions for real-world problems.",
     category: "Competition",
     status: "ongoing",
@@ -33,7 +33,7 @@ const events = [
     id: "expert-talk",
     title: "Industry Expert Talk Series",
     date: "January 25, 2023",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/hackathon3.jpg?height=200&width=400",
     description:
       "Leading professionals from top tech companies shared insights on emerging technologies and career opportunities.",
     category: "Seminar",
@@ -155,13 +155,12 @@ export function HomeEventsSection() {
 
                   <div className="absolute top-3 left-3 flex gap-2">
                     <Badge
-                      className={`${
-                        event.status === "upcoming"
+                      className={`${event.status === "upcoming"
                           ? "bg-green-500 hover:bg-green-600 text-black"
                           : event.status === "ongoing"
                             ? "bg-blue-500 hover:bg-blue-600 text-black"
                             : "bg-gray-500 hover:bg-gray-600 text-white"
-                      }`}
+                        }`}
                     >
                       {event.status === "upcoming" ? "Upcoming" : event.status === "ongoing" ? "Ongoing" : "Past"}
                     </Badge>
@@ -227,9 +226,8 @@ function FilterButton({ active, onClick, children }) {
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-        active ? "bg-orange-500 text-black" : "bg-zinc-800/70 text-gray-300 hover:bg-zinc-700/70"
-      }`}
+      className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${active ? "bg-orange-500 text-black" : "bg-zinc-800/70 text-gray-300 hover:bg-zinc-700/70"
+        }`}
     >
       {children}
     </button>

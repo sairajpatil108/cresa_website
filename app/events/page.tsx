@@ -1,13 +1,13 @@
-import Link from "next/link"
-import Image from "next/image"
 import { Calendar, Filter, Search } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 
+import { EventCard } from "@/components/event-card"
+import { Navbar } from "@/components/navbar"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
-import { Navbar } from "@/components/navbar"
-import { EventCard } from "@/components/event-card"
 
 // Sample events data
 const events = [
@@ -15,7 +15,7 @@ const events = [
     id: "ai-workshop",
     title: "AI & Machine Learning Workshop",
     date: "March 15, 2023",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/hackathon1.jpg?height=200&width=400",
     description: "A hands-on workshop exploring the latest advancements in AI and machine learning technologies.",
     category: "Workshop",
     status: "upcoming",
@@ -25,7 +25,7 @@ const events = [
     id: "national-hackathon",
     title: "National Hackathon 2023",
     date: "February 8-10, 2023",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/hackathon2.jpg?height=200&width=400",
     description: "A 48-hour coding competition where students developed innovative solutions for real-world problems.",
     category: "Competition",
     status: "ongoing",
@@ -35,7 +35,7 @@ const events = [
     id: "expert-talk",
     title: "Industry Expert Talk Series",
     date: "January 25, 2023",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/hackathon3.jpg?height=200&width=400",
     description:
       "Leading professionals from top tech companies shared insights on emerging technologies and career opportunities.",
     category: "Seminar",
@@ -46,7 +46,7 @@ const events = [
     id: "web-dev-bootcamp",
     title: "Web Development Bootcamp",
     date: "April 5, 2023",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/hackathon4.jpg?height=200&width=400",
     description: "Learn modern web development with React, Next.js and more in this intensive bootcamp.",
     category: "Workshop",
     status: "upcoming",
@@ -149,33 +149,6 @@ export default function EventsPage({ searchParams }) {
       <Navbar />
 
       <main className="pt-20">
-        {/* Hero Section */}
-        <section className="relative py-12 md:py-20 bg-zinc-900/50 border-b border-orange-500/20">
-          <div className="container">
-            <div className="max-w-3xl">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">Events & Activities</h1>
-              <p className="text-gray-400 text-lg mb-6">
-                Discover workshops, seminars, competitions, and other activities organized by the Computer Engineering
-                Department.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="relative flex-grow">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
-                  <Input
-                    type="text"
-                    placeholder="Search events..."
-                    className="pl-10 bg-zinc-800 border-orange-500/30 focus:border-orange-500 focus:ring-orange-500"
-                  />
-                </div>
-                <Button variant="outline" className="border-orange-500/50 text-orange-500 hover:bg-orange-500/10">
-                  <Filter className="mr-2 h-4 w-4" />
-                  Filter
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Featured Events */}
         <section className="py-12">
@@ -198,13 +171,12 @@ export default function EventsPage({ searchParams }) {
                       {event.category}
                     </Badge>
                     <Badge
-                      className={`absolute top-3 left-3 ${
-                        event.status === "upcoming"
-                          ? "bg-green-500 hover:bg-green-600 text-black"
-                          : event.status === "ongoing"
-                            ? "bg-blue-500 hover:bg-blue-600 text-black"
-                            : "bg-gray-500 hover:bg-gray-600 text-white"
-                      }`}
+                      className={`absolute top-3 left-3 ${event.status === "upcoming"
+                        ? "bg-green-500 hover:bg-green-600 text-black"
+                        : event.status === "ongoing"
+                          ? "bg-blue-500 hover:bg-blue-600 text-black"
+                          : "bg-gray-500 hover:bg-gray-600 text-white"
+                        }`}
                     >
                       {event.status === "upcoming" ? "Upcoming" : event.status === "ongoing" ? "Ongoing" : "Past"}
                     </Badge>
@@ -363,15 +335,15 @@ export default function EventsPage({ searchParams }) {
             <div>
               <h3 className="font-bold text-lg mb-4">Contact Us</h3>
               <address className="text-gray-400 not-italic space-y-2">
-                <p>123 University Avenue</p>
-                <p>City, State 12345</p>
-                <p>Email: info@compeng.edu</p>
-                <p>Phone: (123) 456-7890</p>
+                <p>Pimpri Chinchwad College of Engineering</p>
+                <p>Pune, Maharashtra 411044</p>
+                <p>Email: pccoepune.org</p>
+                <p>Phone: 345-456-7890</p>
               </address>
             </div>
           </div>
           <div className="border-t border-orange-500/20 mt-8 pt-8 text-center text-gray-500 text-sm">
-            <p>© {new Date().getFullYear()} Computer Engineering Department. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Computer Engineering Regional Department. All rights reserved.</p>
           </div>
         </div>
       </footer>

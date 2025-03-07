@@ -2,11 +2,11 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
+import { AnimatePresence, motion } from "framer-motion"
+import { ChevronDown, Menu, X } from "lucide-react"
 import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, ChevronDown } from "lucide-react"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -40,16 +40,15 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4">
         <motion.div
-          className={`rounded-full backdrop-blur-md transition-all duration-300 flex items-center justify-between px-6 py-2 ${
-            scrolled ? "bg-black/80 border border-orange-500/20 shadow-lg shadow-orange-500/5" : "bg-black/40"
-          }`}
+          className={`rounded-full backdrop-blur-md transition-all duration-300 flex items-center justify-between px-6 py-2 ${scrolled ? "bg-black/80 border border-orange-500/20 shadow-lg shadow-orange-500/5" : "bg-black/40"
+            }`}
         >
           <Link href="/" className="flex items-center gap-2 z-50">
             <div className="relative w-10 h-10 overflow-hidden rounded-full border border-orange-500">
-              <Image src="/placeholder.svg?height=40&width=40" alt="Department Logo" fill className="object-cover" />
+              <Image src="/logo.jpeg?height=40&width=40" alt="Department Logo" fill className="object-cover" />
             </div>
             <div className="font-bold tracking-tight">
-              <span className="text-orange-500">Computer</span> Engineering
+              <span className="text-orange-500">CRESA</span>
             </div>
           </Link>
 
@@ -106,17 +105,24 @@ export function Navbar() {
 
             <NavLink href="/#achievements">Achievements</NavLink>
             <NavLink href="/team">Team</NavLink>
-            <NavLink href="/#testimonials">Testimonials</NavLink>
-            <NavLink href="/#contact">Contact</NavLink>
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
             <Button
               variant="outline"
-              className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black rounded-full"
+              className="border-black-500 text-black-500  hover:text-white rounded-full"
+              onClick={() => window.open("https://club-dashboard-pro.lovable.app/login", "_blank")}
             >
-              Student Portal
+              Admin Login
             </Button>
+            <Button
+              variant="outline"
+              className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black rounded-full"
+              onClick={() => window.open("https://forms.gle/qbwiCFrCuxxfhKoW7", "_blank")}
+            >
+              Contact Us
+            </Button>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -153,7 +159,7 @@ export function Navbar() {
                   <MobileNavLink href="/#testimonials" onClick={() => setIsOpen(false)}>
                     Testimonials
                   </MobileNavLink>
-                 
+
 
                   <Button className="mt-4 bg-orange-500 hover:bg-orange-600 text-black rounded-full">
                     Contact
